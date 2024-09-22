@@ -8,13 +8,7 @@ import { UserComponent } from './user/user.component';
 
 @NgModule({
   // Add standalone components here
-  imports: [
-    FormsModule,
-    BrowserModule,
-    TasksComponent,
-    HeaderComponent,
-    UserComponent,
-  ],
+  imports: [BrowserModule, TasksComponent, HeaderComponent, UserComponent],
   // Add not standalone compoents here
   declarations: [AppComponent],
   bootstrap: [AppComponent],
