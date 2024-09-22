@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { UserComponent } from './user/user.component';
 
 @NgModule({
+  // Add standalone components here
   imports: [
     FormsModule,
     BrowserModule,
@@ -14,6 +15,7 @@ import { UserComponent } from './user/user.component';
     HeaderComponent,
     UserComponent,
   ],
+  // Add not standalone compoents here
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
