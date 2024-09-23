@@ -1,11 +1,11 @@
-<form (ngSubmit)="onSubmitForm()">
+<form (ngSubmit)="onSubmitForm()" id="teste">
   <div class="input-group">
     <p>
       <label for="initial-investiment">Initial Investiment</label>
       <input
         id="initial-investiment"
         [(ngModel)]="initialInvestiment"
-        [ngModelOptions]="{ standalone: true }"
+        name="initialInvestiment"
         type="number"
       />
     </p>
@@ -13,8 +13,8 @@
       <label for="annual-investiment">Annual Investiment</label>
       <input
         id="annual-investiment"
+        name="annualInvestment"
         [(ngModel)]="annualInvestment"
-        [ngModelOptions]="{ standalone: true }"
         type="number"
       />
     </p>
@@ -25,7 +25,7 @@
       <input
         id="expected-return"
         [(ngModel)]="expectedReturn"
-        [ngModelOptions]="{ standalone: true }"
+        name="expectedReturn"
         type="number"
       />
     </p>
@@ -34,7 +34,7 @@
       <input
         id="duration"
         [(ngModel)]="duration"
-        [ngModelOptions]="{ standalone: true }"
+        name="duration"
         type="number"
       />
     </p>
