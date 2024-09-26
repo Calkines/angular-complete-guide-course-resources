@@ -1,1 +1,12 @@
-<p>investiment-results works!</p>
+<h2 mat-dialog-title>Hi dear</h2>
+<mat-dialog-content>
+  <p>What's your favorite animal?</p>
+  <mat-form-field>
+    <mat-label>Favorite Animal</mat-label>
+    <input matInput [(ngModel)]="investment" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="investment" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
