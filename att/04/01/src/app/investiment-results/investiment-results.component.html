@@ -1,12 +1,25 @@
-<h2 mat-dialog-title>Hi dear</h2>
-<mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput [(ngModel)]="investment" />
-  </mat-form-field>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="investment" cdkFocusInitial>Ok</button>
-</mat-dialog-actions>
+@if(!data){
+<p>Please enter some values and press "Calculate".</p>
+}
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(d of data; track d.year){
+    <tr>
+      <td>{{ d.year }}</td>
+      <td>{{ d.annualInvestment | currency : "BRL" }}</td>
+      <td>{{ d.interest | currency : "BRL" }}</td>
+      <td>{{ d.totalInterest | currency : "BRL" }}</td>
+      <td>{{ d.valueEndOfYear | currency : "BRL" }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
