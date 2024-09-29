@@ -1,7 +1,8 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, computed, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InvestmentInput, InvestmentOutput } from '../investment-input.model';
 import { CurrencyPipe, DatePipe } from '@angular/common';
+import { InvestimentService } from '../investment.service';
 
 @Component({
   selector: 'app-investiment-results',
@@ -11,6 +12,8 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
   styleUrl: './investiment-results.component.css',
 })
 export class InvestimentResultsComponent {
-  @Input()
-  data?: InvestmentOutput[];
+  private investmentService = inject(InvestimentService);
+  //constructor(private investmentService: InvestimentService) {}
+
+  data = this.investmentService.resultsData.asReadonly();
 }
