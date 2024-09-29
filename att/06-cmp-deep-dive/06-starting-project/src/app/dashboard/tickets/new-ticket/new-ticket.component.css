@@ -1,0 +1,9 @@
+#new-ticket {
+  width: auto;
+  height: auto;
+  /* width: 15rem; */
+  min-width: 15rem;
+  max-width: 30rem;
+  min-height: 15rem;
+  max-height: 30rem;
+}

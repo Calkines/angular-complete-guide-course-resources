@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { DashboardItemComponent } from '../dashboard-item/dashboard-item.component';
 
 @Component({
@@ -7,6 +7,7 @@ import { DashboardItemComponent } from '../dashboard-item/dashboard-item.compone
   imports: [DashboardItemComponent],
   templateUrl: './traffic.component.html',
   styleUrl: './traffic.component.css',
+  // encapsulation: ViewEncapsulation.None,
 })
 export class TrafficComponent {
   dummyTrafficData = [
