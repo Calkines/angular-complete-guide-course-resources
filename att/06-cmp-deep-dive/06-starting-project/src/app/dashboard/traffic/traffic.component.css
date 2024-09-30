@@ -30,3 +30,22 @@ p {
     width: 20rem;
   }
 }
+
+.vertical {
+  writing-mode: rl-tb;
+  color: #ffffff;
+  font-size: 0.8rem;
+  display: flex;
+  margin-top: 0.6rem;
+  -webkit-transform: rotate(-65deg);
+  -moz-transform: rotate(-65deg);
+  -o-transform: rotate(-65deg);
+  -ms-transform: rotate(-65deg);
+  transform: rotate(-65deg);
+  white-space: nowrap;
+  display: block;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  front-weight: 200;
+}

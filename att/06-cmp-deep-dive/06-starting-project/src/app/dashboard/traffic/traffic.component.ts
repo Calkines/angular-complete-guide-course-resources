@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { DashboardItemComponent } from '../dashboard-item/dashboard-item.component';
+import { ControlComponent } from '../../shared/control/control.component';
 
 @Component({
   selector: 'app-traffic',
   standalone: true,
-  imports: [DashboardItemComponent],
+  imports: [DashboardItemComponent, ControlComponent],
   templateUrl: './traffic.component.html',
   styleUrl: './traffic.component.css',
   // encapsulation: ViewEncapsulation.None,
@@ -41,4 +42,12 @@ export class TrafficComponent {
     },
   ];
   maxTraffic = Math.max(...this.dummyTrafficData.map((data) => data.value));
+  roundNumber(value: number, roundTo: number = 2) {
+    return Math.round(value * Math.pow(10, roundTo)) / Math.pow(10, roundTo);
+  }
+  showPercentage = true;
+  onCheck() {
+    console.log('changing the value');
+    this.showPercentage = !this.showPercentage;
+  }
 }

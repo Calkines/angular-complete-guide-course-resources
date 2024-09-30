@@ -1,4 +1,12 @@
-import { Component, input, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostBinding,
+  HostListener,
+  input,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'app-control',
@@ -9,8 +17,19 @@ import { Component, input, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'control',
+    // click: 'onClick($event)',
   },
 })
 export class ControlComponent {
   title = input.required<string>();
+  @HostListener('click', ['$event']) onClick(event: Event) {
+    console.log('ControlComponent.onClick', event);
+    console.log(event);
+  }
+  @Output() onCheck = new EventEmitter();
+
+  check() {
+    console.log('acionou check do control component');
+    this.onCheck.emit();
+  }
 }

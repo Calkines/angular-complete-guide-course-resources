@@ -4,10 +4,24 @@
   id="traffic"
 >
   <p>Last 7 days</p>
-
+  <div>
+    <app-control title="Show Percentage">
+      <input
+        [(checked)]="showPercentage"
+        onclick="this.check()"
+        type="checkbox"
+        name="check"
+      />
+    </app-control>
+    {{ showPercentage }}
+  </div>
   <div id="chart">
     @for (dataPoint of dummyTrafficData; track dataPoint.id) {
-    <div [style.height]="(dataPoint.value / maxTraffic) * 100 + '%'"></div>
+    <div [style.height]="(dataPoint.value / maxTraffic) * 100 + '%'">
+      <p class="vertical">
+        {{ roundNumber((dataPoint.value / maxTraffic) * 100, 0) + "%" }}
+      </p>
+    </div>
     }
   </div>
 </app-dashboard-item>
